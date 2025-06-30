@@ -36,21 +36,21 @@ class Conexion:
         return f"ID Jugador: {self.__idJugador}, Direccion IP: {self.__direccionIP}, Juego: {self.__juego}, Fecha: {self.__fecha}, Hora Inicio: {self.__horaInicio}, Hora Fin: {self.__horaFin}"
     
     def __eq__(self, otro):
-        return (self.__idJugador == otro.getIdJugador() and
-                self.__direccionIP != otro.getDireccionIP() and
-                self.__fecha == otro.getFecha() and
-                self.__horaInicio == otro.getHoraInicio())
+        return (self.getIdJugador() == otro.getIdJugador() and
+                self.getDireccionIP() != otro.getDireccionIP() and
+                self.getFecha() == otro.getFecha() and
+                self.getHoraInicio() == otro.getHoraInicio())
 
     def __lt__(self, otro):
         retorno = None
 
-        if self.__idJugador != otro.getIdJugador():
-            retorno = self.__idJugador < otro.getIdJugador()
-        elif self.__fecha != otro.getFecha():
-            retorno = self.__fecha < otro.getFecha()
-        elif self.__horaInicio != otro.getHoraInicio():
-            retorno = self.__horaInicio < otro.getHoraInicio()
+        if self.getIdJugador() != otro.getIdJugador():
+            retorno = self.getIdJugador() < otro.getIdJugador()
+        elif self.getFecha() != otro.getFecha():
+            retorno = self.getFecha() < otro.getFecha()
+        elif self.getHoraInicio() != otro.getHoraInicio():
+            retorno = self.getHoraInicio() < otro.getHoraInicio()
         else:
-            retorno = self.__direccionIP < otro.getDireccionIP()
+            retorno = self.getDireccionIP() < otro.getDireccionIP()
         
         return retorno
